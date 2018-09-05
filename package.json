@@ -1,0 +1,22 @@
+{
+  "name": "liribot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "keys.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malorielara/liri-node-app.git"
+  },
+  "author": "malorie lara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malorielara/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/malorielara/liri-node-app#readme",
+  "dependencies": {
+    "twitter": "^1.7.1"
+  }
+}
