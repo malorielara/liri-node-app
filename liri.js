@@ -1,4 +1,18 @@
 require("dotenv").config();
 
-var spotify = new Spotify(keys.spotify);
-var client = new Twitter(keys.twitter);
+// required vars for it to wurrrk
+var keys = require("./keys.js");
+var fs = require("fs");
+var request = require("request");
+
+// twittah
+var Twitter = require("twitter");
+
+// spotify 
+var Spotify = require('node-spotify-api');
+
+var filename = './log.txt';
+
+var log = require('simple-node-logger').createSimpleFileLogger(filename);
+
+log.setLevel('all');
