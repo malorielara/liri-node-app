@@ -12,11 +12,11 @@ var Twitter = require("twitter");
 var Spotify = require('node-spotify-api');
 
 var filename = './log.txt';
-
 var log = require('simple-node-logger').createSimpleFileLogger(filename);
 
 log.setLevel('all');
 
+// user commands
 var userCommand = process.argv[2];
 var secondCommand = process.argv[3];
 
@@ -89,7 +89,6 @@ function mySwitch(userCommand) {
 }
 
 // get tweets function
-
 function getTweets() {
     var client = new Twitter(keys.twitter);
     var screenName = {
@@ -136,8 +135,19 @@ function getMovie() {
         }
 
         // movie name presented when user doesnt enter a movie name
-        // finding nemo imdb link: https://www.imdb.com/title/tt0266543/?ref_=fn_al_tt_1
+        // finding nemo imdb link: https://www.imdb.com/title/tt0266543/?ref_=fn_al_tt_1 
+        if(movieName === "Finding Nemo") {
+            console.log("Watch Finding Nemo!");
+            console.log("https://www.imdb.com/title/tt0266543/?ref_=fn_al_tt_1");
+        }
     })
+
+    // dowhat function
+    function doWhat() {
+        fs.readFile("random.txt", "utf8", function(err, data){
+
+        })
+    }
 }
 
 mySwitch(userCommand);
