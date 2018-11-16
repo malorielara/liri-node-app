@@ -28,6 +28,10 @@ for (var i = 4; i < process.argv.length; i++) {
 
 var spotify = new Spotify(keys.spotify);
 
+var getArtistNames = function (artist) {
+    return artist.name;
+};
+
 var getSpotify = function(songName) {
     if(songName === undefined) {
         songName = "Que es mi numero favorito?";
