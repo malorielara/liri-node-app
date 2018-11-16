@@ -91,7 +91,22 @@ function mySwitch(userCommand) {
 
 function getTweets() {
     var client = new Twitter(keys.twitter);
-    var screenName = {screen_name: 'malorielara'};
+    var screenName = {
+        screen_name: 'malorielara'
+    };
+
+    client.get('statuses/user_timeline', screenName, function (error, tweets, response) {
+    
+        // throw da errrr
+        if (error) throw error;
+
+        for (var i = 0; i < tweets.length; i++) {
+            var date = tweets[i].created_at;
+            logOutput("@malorielara: " + tweets[i].text + " Created At: " + date.substring(0, 19));
+            logOutput("-----------------------");
+        }
+
+    });
 }
 
 // get movie function
@@ -100,6 +115,12 @@ function getMovie() {
     var movieName = secondCommand;
     var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&tomatoes=true&apikey=trilogy";
 
+    // look into if
+    request(queryUrl, function(err, response, body) {
+        if(!error && response == 200) {
+            var body = JSON.parse(body);
+        }
+    })
 }
 
 mySwitch(userCommand);
