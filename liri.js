@@ -89,6 +89,11 @@ function mySwitch(userCommand) {
 
 // get tweets function
 
+function getTweets() {
+    var client = new Twitter(keys.twitter);
+    var screenName = {screen_name: 'malorielara'};
+}
+
 // get movie function
 // OMDB
 function getMovie() {
