@@ -26,6 +26,14 @@ for (var i = 4; i < process.argv.length; i++) {
 
 // to get spotify
 
+var spotify = new Spotify(keys.spotify);
+
+var getSpotify = function(songName) {
+    if(songName === undefined) {
+        songName = "Que es mi numero favorito?";
+    }
+}
+
 // artists names
 
 // spotify function
