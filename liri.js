@@ -145,7 +145,11 @@ function getMovie() {
     // dowhat function
     function doWhat() {
         fs.readFile("random.txt", "utf8", function(err, data){
-
+        
+            // if no error then show data and split strings with commas
+            if(!err);
+            console.log(data.toString());
+            var cdms = data.toString().split(',');
         })
     }
 }
