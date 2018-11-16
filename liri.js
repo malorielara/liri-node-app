@@ -121,7 +121,15 @@ function getMovie() {
         if(!error && response == 200) {
             var body = JSON.parse(body);
 
-            logOutput('')
+            logOutput('MOVIE INFO:');
+            logOutput("Title: " + body.Title);
+            logOutput("Year Released: " + body.Year);
+            logOutput("Plot: " + body.plot);
+            logOutput("Country: " + body.Country);
+            logOutput("IMDB Rating: " + body.imdbRating);
+            logOutput("Language: " + body.Language);
+            logOutput("Actors: " + body.Actors);
+            logOutput("NO MAS!");
 
         } else {
             console.log("ERROR!");
