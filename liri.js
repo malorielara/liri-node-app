@@ -70,3 +70,8 @@ var getSpotify = function (songName) {
 
 // get movie function
 // OMDB
+function getMovie() {
+    var movieName = secondCommand;
+    var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&tomatoes=true&apikey=trilogy";
+
+}
