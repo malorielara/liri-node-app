@@ -40,6 +40,7 @@ var getSpotify = function (songName) {
         songName = "Que es mi numero favorito?";
     }
 
+    // search song in spotify
     spotify.search({
             type: "track",
             query: userCommand
@@ -119,7 +120,15 @@ function getMovie() {
     request(queryUrl, function(err, response, body) {
         if(!error && response == 200) {
             var body = JSON.parse(body);
+
+            logOutput('')
+
+        } else {
+            console.log("ERROR!");
         }
+
+        // movie name presented when user doesnt enter a movie name
+        // finding nemo imdb link: https://www.imdb.com/title/tt0266543/?ref_=fn_al_tt_1
     })
 }
 
