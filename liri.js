@@ -25,9 +25,12 @@ for (var i = 4; i < process.argv.length; i++) {
 }
 
 // to get spotify
+// spotify function
+// search spotify
 
 var spotify = new Spotify(keys.spotify);
 
+// artists names
 var getArtistNames = function (artist) {
     return artist.name;
 };
@@ -61,10 +64,28 @@ var getSpotify = function (songName) {
     );
 };
 
-// artists names
+// switch command
+// tells what to switch to 
+function mySwitch(userCommand) {
 
-// spotify function
-// search spotify
+    switch (userCommand) {
+        case "my-tweets":
+            getTweets();
+            break;
+
+        case "spotify-this-song":
+            getSpotify();
+            break;
+
+        case "movie-this":
+            getMovie();
+            break;
+
+        case "do-what-it-says":
+            doWhat();
+            break;
+    }
+}
 
 // get tweets function
 
@@ -75,3 +96,5 @@ function getMovie() {
     var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&tomatoes=true&apikey=trilogy";
 
 }
+
+mySwitch(userCommand);
